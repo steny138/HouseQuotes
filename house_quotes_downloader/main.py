@@ -76,8 +76,14 @@ def xml_row(extract_csv_file_path):
     #     for grandchild in child:
     #     print grandchild.tag  # 第二层节点
  
+"""
+TODO: 
+1. 撰寫log 依照流程寫 檔名=>解壓縮中=>得到多少檔案=>檔案解析=>解析幾筆資料=>寫入
+2. 下載的2017S2直接從網路下載
+3. session 每個xml檔案都重啟，讓ＤＢ先寫進去
+"""
 if __name__ == '__main__':
-    files = ["2017S2"]
+    files = ["2017S2","2017S1","2016S4","2016S3","2016S2","2016S1"]
     for fileName in files:
         # 先解壓縮
         extract_path = zipper.un_zip(fileName)
