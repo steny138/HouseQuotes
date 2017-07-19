@@ -16,6 +16,14 @@ Base.metadata.create_all(Engine)
 Session= sessionmaker(bind=Engine)
 session = Session()
 
+def download_file():
+    urls = []
+    for i in range(date.today().year+1-1911-102):
+        year = 102 + i
+        for season in range(1, 5):
+            urls.append("http://plvr.land.moi.gov.tw/DownloadHistory?type=season&fileName=%dS%d" % (year, season))
+
+    print(urls)
 
 def unicode_csv_reader(utf8_data, dialect=csv.excel, **kwargs):
     csv_reader = csv.reader(utf8_data, dialect=dialect, **kwargs)
