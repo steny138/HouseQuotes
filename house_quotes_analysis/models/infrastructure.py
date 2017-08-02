@@ -25,3 +25,16 @@ class District(InfrastructureBase):
             self.city,
             self.district
         )
+
+class DealPurpose(InfrastructureBase):
+    __tablename__ = 'DealPurposes'
+
+    id = Column(Integer, primary_key=True)
+    purpose = Column(String)
+
+    def __init__(self, p):
+        self.purpose = p
+
+    def __repr__(self):
+        return self.purpose
+        
